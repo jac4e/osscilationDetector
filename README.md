@@ -16,7 +16,9 @@ When the laser is first interrupted on the forward swing, the time in millisecon
 <img src="https://latex.codecogs.com/svg.latex?t%20%3D%202%28%28t_3%20&plus;%20%5Cfrac%7Bt_4-t_3%7D%7B2%7D%29-%28t_1%20&plus;%20%5Cfrac%7Bt_2-t_1%7D%7B2%7D%29%29" />
 
 where t is the period and <img src="https://latex.codecogs.com/svg.latex?t_n%20&plus;%20%5Cfrac%7Bt_%7Bn&plus;1%7D-t_n%7D%7B2%7D"/> represents the time from the start of the script to approximetly the point at which the laser is on the vertical axis of the pendulum. This can be simplified to
+
 <img src="https://latex.codecogs.com/svg.latex?t%3D%28t_3&plus;t_4%29-%28t_1&plus;t_2%29"/>
+
 This is repeated 5 times, then the average period is calculated and sent over serial which can then be viewed on a computer using a serial monitor.
 ## Uncertainty
 Since the photo resistor is polled every 100 $\mu\text{s}$, uncertainty produced by this process is negligible. The uncertainty in each time measurement is 0.5ms as the function used to record time only reports in ms, meaning the smallest unit is 1ms. The period is then assumed to have random error, resulting in a Gaussian distribution, so period and its uncertainty is calculated from the mean and standard deviation of multiple recordings for the same pendulum configuration.
